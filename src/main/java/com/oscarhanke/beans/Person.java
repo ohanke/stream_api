@@ -17,10 +17,18 @@ public class Person {
         this.age = age;
     }
 
+    public Person(Integer id, String firstName, Integer age) {
+        this.id = id;
+        this.firstName = firstName;
+        this.age = age;
+    }
+
     public Person(String firstName, Integer age) {
         this.firstName = firstName;
         this.age = age;
     }
+
+
 
     public Integer getId() {
         return id;
@@ -49,7 +57,8 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "firstName='" + firstName + '\'' +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
                 ", age=" + age +
                 '}';
     }

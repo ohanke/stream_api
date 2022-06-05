@@ -14,9 +14,7 @@ public class Lecture1Imperative {
 
         System.out.println("Peoples with age up to five: ");
         List<Person> peopleWithAgeUpToFive = getPeoplesWithAgeUpToFive(peoples);
-        for (Person person : peopleWithAgeUpToFive) {
-            System.out.println(person.getFirstName() + ", " + person.getAge());
-        }
+        peopleWithAgeUpToFive.forEach(System.out::println);
     }
 
     public static List<Person> getPeoplesWithAgeUpToFive (List<Person> peoples){
@@ -40,8 +38,9 @@ public class Lecture1Imperative {
         int peoplesAmount = 10;
         List<Person> peoples = new ArrayList<>();
         for (int i = 0; i < peoplesAmount; i++){
+            int id = i;
             int age = i + 1;
-            peoples.add(new Person(names[i] ,age));
+            peoples.add(new Person(id, names[i] ,age));
         }
         return peoples;
     }

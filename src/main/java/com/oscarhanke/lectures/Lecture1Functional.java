@@ -28,8 +28,9 @@ public class Lecture1Functional {
         int peoplesAmount = 10;
         List<Person> peoples = new ArrayList<>();
         for (int i = 0; i < peoplesAmount; i++){
+            int id = i;
             int age = i + 1;
-            peoples.add(new Person(names[i] ,age));
+            peoples.add(new Person(id, names[i] ,age));
         }
         return peoples;
     }
