@@ -22,10 +22,21 @@ public class Lecture2 {
         IntStream.rangeClosed(0, 10).forEach(System.out::println);
 
         List<Person> peoples = getPeoples();
-        iterateThroughPeoples(peoples);
+        intStreamThroughPeopleList(peoples);
+
+        System.out.println("");
+        System.out.println("IntStream.iterate: ");
+        intStreamIterate(15);
     }
 
-    public static void iterateThroughPeoples(List<Person> peoples){
+    public static void intStreamIterate(int limit){
+        IntStream.iterate(0, operand -> operand + 1)
+                .filter(number -> number % 2 == 0)
+                .limit(limit)
+                .forEach(System.out::println);
+    }
+
+    public static void intStreamThroughPeopleList(List<Person> peoples){
         IntStream.range(0, peoples.size()).forEach(index -> {
             Person person = peoples.get(index);
             System.out.println(person);
