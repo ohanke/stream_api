@@ -16,6 +16,17 @@ public class Lecture5 {
 
         List<PersonDTO> dtos = personToPersonDTO(peoples);
         System.out.println("dtos size: " + dtos.size());
+
+        Double averageAge = getAverageAge(peoples);
+        System.out.println("Average age: " + averageAge);
+    }
+
+    public static Double getAverageAge(List<Person> peoples){
+        return peoples.stream().
+                mapToDouble(Person::getAge)
+//                mapToDouble(person -> person.getAge())
+                .average()
+                .orElse(0);
     }
 
     public static List<PersonDTO> personToPersonDTO(List<Person> peoples){
