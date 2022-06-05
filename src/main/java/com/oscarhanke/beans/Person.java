@@ -23,12 +23,6 @@ public class Person {
         this.age = age;
     }
 
-    public Person(String firstName, Integer age) {
-        this.firstName = firstName;
-        this.age = age;
-    }
-
-
 
     public Integer getId() {
         return id;

@@ -1,6 +1,7 @@
 package com.oscarhanke.lectures;
 
 import com.oscarhanke.beans.Person;
+import com.oscarhanke.beans.PersonDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,22 @@ public class Lecture5 {
 
         List<Person> peoplesOverSeven = getPeoplesOverSevenYearsOld(peoples);
         System.out.println("PeoplesOverSeven size: " + peoplesOverSeven.size());
+
+        List<PersonDTO> dtos = personToPersonDTO(peoples);
+        System.out.println("dtos size: " + dtos.size());
+    }
+
+    public static List<PersonDTO> personToPersonDTO(List<Person> peoples){
+        return peoples.stream()
+                .map(person -> new PersonDTO(person.getId(), person.getFirstName(), person.getAge()))
+//                .map(PersonDTO::map)
+                    // or this
+//                .map(person -> {
+//                    PersonDTO dto = new PersonDTO(person.getId(), person.getFirstName(), person.getAge());
+//                    return dto;
+//                })
+                .collect(Collectors.toList());
+
     }
 
     public static List<Person> getPeoplesOverSevenYearsOld(List<Person> peoples){
