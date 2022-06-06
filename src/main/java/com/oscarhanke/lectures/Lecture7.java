@@ -3,6 +3,8 @@ package com.oscarhanke.lectures;
 import com.oscarhanke.beans.Person;
 
 import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
 public class Lecture7 {
@@ -21,6 +23,35 @@ public class Lecture7 {
 
         Integer maxAgeForPersonWithNameOneWithoutComarator = getMaxAgeForPersonWithNameOneWithoutComarator(people);
         System.out.println("maxAgeForPersonWithNameOneWithoutComarator: " + maxAgeForPersonWithNameOneWithoutComarator);
+
+        Double averageAge = getAverageAge(people);
+        System.out.println("averageAge: " + averageAge);
+
+        Long ageSum = getAgeSum(people);
+        System.out.println("ageSum: " + ageSum);
+
+        displayStatistics(people);
+    }
+
+    private static void displayStatistics(List<Person> people) {
+        DoubleSummaryStatistics summaryStatistics = people.stream()
+                .mapToDouble(Person::getAge)
+                .summaryStatistics();
+
+        System.out.println(summaryStatistics);
+    }
+
+    private static Long getAgeSum(List<Person> people) {
+        return people.stream()
+                .mapToLong(Person::getAge)
+                .sum();
+    }
+
+    private static Double getAverageAge(List<Person> people) {
+        return people.stream()
+                .mapToDouble(Person::getAge)
+                .average()
+                .orElse(0);
     }
 
     private static Integer getMaxAgeForPersonWithNameOneWithoutComarator(List<Person> people) {
