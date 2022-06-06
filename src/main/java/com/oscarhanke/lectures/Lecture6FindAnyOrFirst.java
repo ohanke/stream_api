@@ -1,12 +1,8 @@
 package com.oscarhanke.lectures;
 
-import com.oscarhanke.beans.Person;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-public class Lecture6 {
+public class Lecture6FindAnyOrFirst {
     public static void main(String[] args) {
         Integer [] numbers = {1,2,3,4,5,6,7,8,9,10};
         Integer anyNumber = findAnyLowerThanTen(numbers);
@@ -22,6 +18,7 @@ public class Lecture6 {
                 .orElse(0);
     }
 
+    //find any may give different results but its faster than findFirst()
     public static Integer findAnyLowerThanTen(Integer [] numbers){
         return Arrays.stream(numbers)
                 .filter(number -> number < 10)

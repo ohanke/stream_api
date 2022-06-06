@@ -3,7 +3,7 @@ package com.oscarhanke.lectures;
 import java.util.Comparator;
 import java.util.List;
 
-public class Lecture3 {
+public class Lecture3ComparatorMinMax {
     public static void main(String[] args) {
         final List<Integer> numbers = List.of(1, 2, 3, 100, 23, 93, 99);
         System.out.println(getMinValue(numbers));

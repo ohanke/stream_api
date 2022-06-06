@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Lecture4 {
+public class Lecture4Distinct {
     public static void main(String[] args) {
         final List<Integer> numbers = List.of(1,1,1,2,2,3,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,8,9);
 

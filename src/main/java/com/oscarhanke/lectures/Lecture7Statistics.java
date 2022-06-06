@@ -4,10 +4,9 @@ import com.oscarhanke.beans.Person;
 
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
-import java.util.IntSummaryStatistics;
 import java.util.List;
 
-public class Lecture7 {
+public class Lecture7Statistics {
     public static void main(String[] args) {
         List<Person> people = getPeoples();
 

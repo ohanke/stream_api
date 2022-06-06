@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class Lecture2 {
+public class Lecture2IntStream {
     public static void main(String[] args) {
         System.out.println("For loop: ");
         for (int i = 0; i < 10; i++){

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Lecture5 {
+public class Lecture5Map {
     public static void main(String[] args) {
         List<Person> peoples = getPeoples();
 
